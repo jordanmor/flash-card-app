@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
 	res.render('index');
 });
 
+app.get('/cards', (req, res) => {
+	res.render('card', {prompt: "Question goes here"});
+});
+
 app.listen(3000, () => {
 	console.log('The application is running on localhost:3000!');
 });
