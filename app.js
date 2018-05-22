@@ -7,39 +7,13 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
 
+const mainRoutes = require('./routes');
+const cardRoutes = require('./routes/cards');
+
+app.use(mainRoutes);
+app.use('/cards', cardRoutes);
+
 app.set('view engine', 'pug');
-
-app.get('/', (req, res) => {
-	const name = req.cookies.username;
-	if (name) {
-		res.render('index', { name });
-	} else {
-		res.redirect('/hello');
-	}
-});
-
-app.get('/cards', (req, res) => {
-	res.render('card', {prompt: "Question goes here"});
-});
-
-app.get('/hello', (req, res) => {
-	const name = req.cookies.username;
-	if(name) {
-		res.redirect('/');
-	} else {
-		res.render('hello');
-	}
-});
-
-app.post('/hello', (req, res) => {
-	res.cookie('username', req.body.username);
-	res.redirect('/');
-});
-
-app.post('/exit', (req, res) => {
-	res.clearCookie('username');
-	res.redirect('/hello');
-});
 
 app.use((req, res, next) => {
 	const err = new Error('Not Found');
