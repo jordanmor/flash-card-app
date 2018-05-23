@@ -10,10 +10,6 @@ router.get('/', (req, res) => {
 	}
 });
 
-router.get('/cards', (req, res) => {
-	res.render('card', {prompt: "Question goes here"});
-});
-
 router.get('/hello', (req, res) => {
 	const name = req.cookies.username;
 	if(name) {
