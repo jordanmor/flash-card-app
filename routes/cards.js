@@ -4,10 +4,16 @@ const data = require('../data/flashcardData.json').data;
 const cards = data.cards;
 
 router.get('/:id', (req, res) => {
-	res.render('card', {
-		prompt: cards[req.params.id].question,
-		hint: cards[req.params.id].hint
-	});
+	const side = req.query.side;
+	const id = req.params.id;
+	const text = cards[id][side];
+	const hint = cards[id].hint;
+
+	const templateData = { text };
+	if (side === 'question') {
+		templateData.hint = hint;
+	}
+	res.render('card', templateData);
 });
 
 module.exports = router;
