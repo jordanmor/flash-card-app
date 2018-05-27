@@ -26,6 +26,11 @@
                 "question": "Which HTML element can contain JavaScript?",
                 "hint": "It starts with an \"s\"",
                 "answer": "<script>"
+            },
+            {
+              "question": "What is a closure?",
+              "hint": "It's private",
+              "answer": "A function with access to its own private variables"
             }
         ]
     }
