@@ -11,7 +11,6 @@ function randomizeId() {
 }
 
 router.get('/', (req, res) => {
-
 	res.redirect(`/cards/${randomizeId()}`);
 });
 
@@ -23,7 +22,7 @@ router.get('/:id', (req, res) => {
 	if( !side ) {
 		res.redirect(`/cards/${id}?side=question`);
 	}
-
+	const name = req.cookies.username;
 	const text = cards[id][side];
 	const { hint } = cards[id];
 	const capitalize = str => {
@@ -31,7 +30,7 @@ router.get('/:id', (req, res) => {
 		return str.charAt(0).toUpperCase() + str.substr(1);
 	};
 
-	const templateData = { text, id, capitalize };
+	const templateData = { text, id, name, capitalize };
 
 	if (side === 'question') {
 		templateData.hint = hint;
