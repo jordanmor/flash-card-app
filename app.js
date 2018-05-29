@@ -6,6 +6,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
+app.use('/static', express.static(__dirname + '/public'));
 
 const mainRoutes = require('./routes');
 const cardRoutes = require('./routes/cards');
