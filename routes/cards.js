@@ -3,20 +3,30 @@ const router = express.Router();
 const { data } = require('../data/flashcardData.json');
 const { cards } = data;
 
-router.get('/', (req, res) => {
+function randomizeId() {
 	const numOfCards = cards.length;
 	// randomNum starts from 0 in order to properly access json array
 	const flashCardId = Math.floor( Math.random() * numOfCards );
-	res.redirect(`/cards/${flashCardId}?side=question`);
+	return flashCardId;
+}
+
+router.get('/', (req, res) => {
+
+	res.redirect(`/cards/${randomizeId()}`);
 });
 
 router.get('/:id', (req, res) => {
 
 	const { side } = req.query;
 	const { id } = req.params;
+
+	if( !side ) {
+		res.redirect(`/cards/${id}?side=question`);
+	}
+
 	const text = cards[id][side];
 	const { hint } = cards[id];
-	const capitalize = function(str) {
+	const capitalize = str => {
 		str = str.toLowerCase();
 		return str.charAt(0).toUpperCase() + str.substr(1);
 	};
