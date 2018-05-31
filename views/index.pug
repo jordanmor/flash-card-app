@@ -1,11 +1,5 @@
-extends layout
+extends app
 
-block main
-  section.namecard
-    .namecard-hello
-      p.namecard-greeting Welcome, #{name}!
-      form.namecard-exit(action='/exit' method='POST')
-        button(type='submit')
-          img(src='/static/img/close.svg')
-    h1.namecard-prompt Let's get started
-    a.namecard-submit(href='/cards') Begin!
+block intro
+  h1.namecard-prompt Let's get started
+  a.namecard-submit(href='/cards') Begin!
