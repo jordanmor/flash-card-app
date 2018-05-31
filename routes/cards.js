@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 		return str.charAt(0).toUpperCase() + str.substr(1);
 	};
 
-	const templateData = { text, id, name, capitalize };
+	const templateData = { text, id, name, side, capitalize };
 
 	if (side === 'question') {
 		templateData.hint = hint;
