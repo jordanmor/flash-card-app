@@ -3,6 +3,10 @@ body {
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
+form {
+  margin: 0;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -14,7 +18,54 @@ body {
   max-width: 350px;
 }
 
+header {
+  padding: 20px 0;
+}
+
 header p {
   text-align: center;
   color: #D64226;
+  margin: 1em 0;
+}
+
+.namecard {
+  background-color: #f5f3ed;
+  max-width: 400px;
+  border-radius: 20px;
+  text-align: center;
+  color: #727c85;
+}
+
+.namecard-hello {
+  border-bottom: solid 2px #edead9;
+  padding: 5px 20px;
+  text-align: left;
+}
+
+.namecard-form {
+  padding-top: 15px;
+}
+.namecard-prompt {
+  display: block;
+  font-size: 1.6rem;
+  padding-top: 2.5rem;
+}
+.namecard-name {
+  width: 50%;
+  margin: 1rem 4rem;
+  border: none;
+  border-radius: 5px;
+  padding: .4rem .5em;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #665665;
+}
+.namecard-submit {
+  background-color: #fff;
+  color: #D64226;
+  width: 100%;
+  padding: .5rem 0;
+  border: 2px solid #D64226;
+  margin-top: 2rem;
 }
