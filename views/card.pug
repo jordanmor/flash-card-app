@@ -1,11 +1,1 @@
-extends layout.pug
-
-block content
-	section#content
-			h2= text
-			if hint
-				p
-					i Hint: #{hint}
-			a(href=`./${id}?side=${cardOtherSide}`)= capitalize(cardOtherSide)
-			br
-			a(href=`/cards`) Next Card
+extends layout

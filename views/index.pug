@@ -1,6 +1,11 @@
-extends layout.pug
+extends layout
 
-block content
-	section#content
-		a(href=`/cards`) Begin!
-		
+block main
+  section.namecard
+    .namecard-hello
+      p.namecard-greeting Welcome, #{name}!
+      form.namecard-exit(action='/exit' method='POST')
+        button(type='submit')
+          img(src='/static/img/close.svg')
+    h1.namecard-prompt Let's get started
+    a.namecard-submit(href='/cards') Begin!

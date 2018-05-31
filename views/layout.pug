@@ -7,9 +7,4 @@ html(lang="en")
 	body
 		.wrapper
 			include includes/header.pug
-			if name
-				h2 Welcome, #{name}!
-				form(action='/exit' method='post')
-					button(type='submit') Exit Flash Cards App
-			block content
-			include includes/footer.pug
+			block main
