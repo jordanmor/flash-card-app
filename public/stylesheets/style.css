@@ -26,6 +26,11 @@ header p {
   color: #D64226;
   margin: 1em 0;
 }
+/*-------  Global Classes  -------*/
+
+.hide {
+  display: none;
+}
 
 /*-------  Log In  -------*/
 
@@ -94,7 +99,8 @@ header p {
 
 /*-------  Flash Cards  -------*/
 
-.card-question {
+.card-question,
+.card-answer {
   padding-bottom: 20px;
   border-bottom: 4px solid rgba(0,0,0,.1);
 }
@@ -125,6 +131,21 @@ header p {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.5;
+}
+
+.card-hint-btn {
+  background-color: #EEC900;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: .75em;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  outline: none;
+}
+
+.card-hint-btn:hover {
+  background-color: #EEB422;
 }
 
 .card-buttons {

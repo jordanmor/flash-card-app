@@ -8,11 +8,12 @@ block card
       #content
         h2= text
         if hint
-          p.hint
-            i Hint: #{hint}
+          p(class='card-hint')
+            i #{hint}
       .card-buttons
         .card-flip-wrap
           a(href=`${id}?side=${cardOtherSide}`)
         .card-next
           a(href='/cards')
             img(src='/static/img/next.svg')
+  script(src='/static/js/app.js')
