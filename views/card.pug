@@ -10,9 +10,9 @@ block card
         if hint
           p.hint
             i Hint: #{hint}
-      .card-flip-wrap
-        a(href=`${id}?side=${cardOtherSide}`)
-          img.card-flip(src='/static/img/flip.svg')
-      .card-next
-        a(href='/cards')
-          img(src='/static/img/next.svg')
+      .card-buttons
+        .card-flip-wrap
+          a(href=`${id}?side=${cardOtherSide}`)
+        .card-next
+          a(href='/cards')
+            img(src='/static/img/next.svg')
